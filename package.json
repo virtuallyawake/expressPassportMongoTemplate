@@ -1,0 +1,16 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.5.1",
+    "passport": "~0.2.0",
+    "connect-flash": "~0.1.1",
+    "passport-local": "~1.0.0",
+    "ejs": "~1.0.0",
+    "ejs-locals": "~1.0.2"
+  }
+}
