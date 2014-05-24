@@ -1,4 +1,6 @@
 var LocalStrategy = require('passport-local').Strategy;
+var mongoose = require('mongoose');
+var User = mongoose.model('User');
 
 module.exports = function(passport) {
     // List of authorized users
@@ -57,7 +59,9 @@ module.exports = function(passport) {
 		// indicate failure and set a flash message.  Otherwise, return the
 		// authenticated `user`.
 		findByUsername(username, function(err, user) {
-		    if (err) { return done(err); }
+		    if (err)
+			return done(err);
+ 
 		    if (!user) { 
 			return done(null, false, { message: 'Unknown user ' + username });
 		    }
