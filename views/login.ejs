@@ -1,10 +1,18 @@
 <% layout('layout') -%>
-<form class="form-signin" action="/login" method="post">
-      <% if (message) { %>
-      <p class="text-danger"><%= message %></p>
-      <% } %>
-      <input type="text" class="form-control" name="username" placeholder="Username" required autofocus/>
-      <input type="password" class="form-control" name="password" placeholder="Password" required/>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      <h5 class="pull-right">New user? <a href="/signup">Create an account.</a></h5>
-</form>
+   <% if (!user) { %>
+     <h2 class="form-signin-heading">Please sign in</h2>
+     <form class="form-signin" action="/login" method="post">
+       <% if (message) { %>
+     	  <p class="text-danger"><%= message %></p>
+       <% } %>
+       <input type="text" class="form-control" name="username" placeholder="Username" required autofocus/>
+       <input type="password" class="form-control" name="password" placeholder="Password" required/>
+       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+       <h5 class="pull-right">New user? <a href="/signup">Create an account.</a></h5>
+     </form>
+   <% } else { %>
+     <h2 class="form-signin-heading">
+     <a href="/">Rax IDE</a> |
+     <a href="/logout">Sign Out</a>
+     </h2>
+   <% } %>

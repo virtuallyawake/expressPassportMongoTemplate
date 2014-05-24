@@ -10,6 +10,12 @@ module.exports = function(app, passport) {
 	     function(req, res) {
 	         res.redirect('/');
 	     });
+    app.get('/signup', function(req, res) {
+	res.render('signup', { message: req.flash('error') });
+    });
+    app.post('/signup', function(req, res) {
+	res.send("Signup!");
+    });
     app.get('/logout', function(req, res){
 	req.logout();
 	res.redirect('/');

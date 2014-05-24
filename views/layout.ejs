@@ -1,21 +1,13 @@
 <!DOCTYPE html>
   <html>
     <head>
-      <title>Rax IDE</title>
+      <title>Smalltime CRM</title>
 
       <!-- Bootstrap: Latest compiled and minified CSS -->
       <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
       <link rel="stylesheet" href="stylesheets/access.css">
     </head>
     <body>
-      <% if (!user) { %>
-        <h2 class="form-signin-heading">Please sign in</h2>
-	<%- body %>
-      <% } else { %>
-        <h2 class="form-signin-heading">
-	  <a href="/">Rax IDE</a> |
-      	    <a href="/logout">Sign Out</a>
-        </h2>
-      <% } %>
+      <%- body %>
     </body>
   </html>
